@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         var done = this.async();
         grunt.util.spawn({
             cmd: 'git',
-            args: ['diff', 'HEAD', '--name-only', '--diff-filter=ACM'] // staged and working tree files
+            args: ['diff', 'develop', '--name-only', '--diff-filter=ACM'] // staged and working tree files
         }, function(error, result){
 
             var changedFiles = String(result).split(grunt.util.linefeed);
